@@ -23,9 +23,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config("DJANGO_SECRET_KEY", cast=str, default=get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DJANGO_DEBUG", cast=bool, default=True)
+DEBUG = config("DJANGO_DEBUG", cast=bool, default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    # "hungrypy.com",
+    # "www.hungrypy.com",
+    ".railway.app"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.railway.app"
+]
+
+if DEBUG:
+    ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
