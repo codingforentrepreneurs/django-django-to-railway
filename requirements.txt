@@ -1,3 +1,5 @@
 Django==5.2rc1
 python-decouple
 gunicorn
+dj-database-url
+psycopg[binary] # postgres-python v3
