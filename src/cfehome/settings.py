@@ -19,6 +19,7 @@ REPO_DIR = BASE_DIR.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 TEMPLATES_DIR.mkdir(parents=True, exist_ok=True)
 
+PROJECT_NAME = config("PROJECT_NAME", default="Unset Project Name")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
