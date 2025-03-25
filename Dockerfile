@@ -46,6 +46,7 @@ RUN pip install -r /tmp/requirements.txt
 
 # add our static files to container itself on build
 RUN python manage.py collectstatic --noinput
+RUN python manage.py sendtestemail --admins 
 
 COPY ./boot/docker-run.sh /opt/docker-run.sh
 
