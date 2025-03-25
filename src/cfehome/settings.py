@@ -222,6 +222,7 @@ REDIS_URL = config("REDIS_URL", default="")
 
 ### REDIS CACHE
 if REDIS_URL:
+    print(REDIS_URL)
     CACHES = {
         "default": {
             "BACKEND": "django_redis.cache.RedisCache",
