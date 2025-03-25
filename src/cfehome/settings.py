@@ -65,6 +65,10 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.hungrypy.com"
 ]
 
+# HTTPS
+CSRF_COOKIE_SECURE=not DEBUG
+SESSION_COOKIE_SECURE=not DEBUG
+
 if DEBUG:
     ALLOWED_HOSTS = ["*"]
 
