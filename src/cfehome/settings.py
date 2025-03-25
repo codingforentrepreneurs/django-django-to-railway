@@ -55,13 +55,14 @@ SECRET_KEY = config("DJANGO_SECRET_KEY", cast=str, default=get_random_secret_key
 DEBUG = config("DJANGO_DEBUG", cast=bool, default=False)
 
 ALLOWED_HOSTS = [
-    # "hungrypy.com",
+    ".hungrypy.com",
     # "www.hungrypy.com",
     ".railway.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.railway.app"
+    "https://*.railway.app",
+    "https://*.hungrypy.com"
 ]
 
 if DEBUG:
