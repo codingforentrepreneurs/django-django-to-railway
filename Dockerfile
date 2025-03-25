@@ -16,6 +16,7 @@ RUN pip install --upgrade pip
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# ubuntu linux os deps
 # Install os dependencies for our mini vm
 RUN apt-get update && apt-get install -y \
     # for postgres
