@@ -3,3 +3,4 @@ python-decouple
 gunicorn
 dj-database-url
 psycopg[binary] # postgres-python v3
+whitenoise[brotli]

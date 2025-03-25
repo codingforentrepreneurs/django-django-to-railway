@@ -55,8 +55,14 @@ INSTALLED_APPS = [
     'commando',
 ]
 
+if DEBUG:
+    INSTALLED_APPS.append(
+        "whitenoise.runserver_nostatic"
+    )
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -156,6 +162,13 @@ STATIC_ROOT.mkdir(exist_ok=True, parents=True)
 STATICFILES_DIRS = [
     BASE_DIR / "staticfiles"
 ]
+
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
