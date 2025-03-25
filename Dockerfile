@@ -57,4 +57,4 @@ RUN apt-get remove --purge -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-CMD ["./opt/docker-run.sh"]
+CMD ["/opt/docker-run.sh"]
